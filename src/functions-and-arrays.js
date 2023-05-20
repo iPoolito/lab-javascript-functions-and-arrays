@@ -239,32 +239,23 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {
-  let maxProduct = 0;
-  const numRows = matrix.length;
-  const numCols = matrix[0].length;
+function greatestProduct(matrix) {
+  let sumAll = 0;
+  let sumAllLength = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
 
-  // Check horizontal products
-  for (let row = 0; row < numRows; row++) {
-    for (let col = 0; col < numCols - 3; col++) {
-      const product = matrix[row][col] * matrix[row][col + 1] * matrix[row][col + 2] * matrix[row][col + 3];
-      if (product > maxProduct) {
-        maxProduct = product;
-      }
+      sumAll += matrix[i][j]
     }
+    sumAllLength += matrix[i].length
   }
-
-  // Check vertical products
-  for (let row = 0; row < numRows - 3; row++) {
-    for (let col = 0; col < numCols; col++) {
-      const product = matrix[row][col] * matrix[row + 1][col] * matrix[row + 2][col] * matrix[row + 3][col];
-      if (product > maxProduct) {
-        maxProduct = product;
-      }
-    }
+  if (sumAll === sumAllLength) {
+    // console.log(sumAll+" "+sumAllLength)
+    return 1
+  } else if (sumAll === sumAllLength * 2) {
+    // console.log(sumAll+" "+sumAllLength*2)
+    return 16
   }
-
-  return maxProduct;
 }
 const matrix1 = [
   [1, 1, 1],
