@@ -170,6 +170,27 @@ function uniquifyArray(array) {
   return unificado;
 }
 
+// function uniquifyArray(wordsUnique) {
+
+//   if (wordsUnique.length === 0) {
+//     return null
+//   }
+
+//   let result = [];
+
+//   wordsUnique.forEach(word => {
+
+//     if (result.includes(word) === false) {
+//       result.push(word)
+//     }
+
+//   });
+
+//   return result
+
+// }
+
+
 
 uniquifyArray(wordsUnique);
 // Iteration #6: Find elements
