@@ -240,31 +240,26 @@ const matrix = [
 ];
 
 function greatestProduct(matrix) {
-  let sumAll = 0;
-  let sumAllLength = 0;
+
+  let greatestProduct = 0
+
   for (let i = 0; i < matrix.length; i++) {
+
     for (let j = 0; j < matrix[i].length; j++) {
 
-      sumAll += matrix[i][j]
+      let fourNumber = matrix[i][j] * matrix[i][j + 1] * matrix[i][j + 2] * matrix[i][j + 3]
+
+      if (fourNumber > greatestProduct) {
+        greatestProduct = fourNumber
+      }
+
+
     }
-    sumAllLength += matrix[i].length
+
   }
-  if (sumAll === sumAllLength) {
-    // console.log(sumAll+" "+sumAllLength)
-    return 1
-  } else if (sumAll === sumAllLength * 2) {
-    // console.log(sumAll+" "+sumAllLength*2)
-    return 16
-  }
+
+  return greatestProduct
 }
-const matrix1 = [
-  [1, 1, 1],
-  [1, 1, 1],
-  [1, 1, 1]
-];
-
-console.log(greatestProduct(matrix1))
-
 
 
 
